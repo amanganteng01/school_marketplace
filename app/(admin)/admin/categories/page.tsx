@@ -1,5 +1,5 @@
-import { GetCategory } from "@/app/queries/categoryquery";
-import { CategoryTable } from "./table";
+import { GetCategory } from "./actions";
+import { CategoryTable } from "./components/table";
 import { Suspense } from "react";
 
 export default async function CategoryPage(){
