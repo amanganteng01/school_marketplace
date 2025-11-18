@@ -3,7 +3,7 @@ import { USER } from "../types/user";
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
 if (!baseUrl) {
-    throw new Error('Url tidak ditemukan');
+    throw new Error('Base url tidak ditemukan');
 }
 
 export async function GetUser(): Promise<{ success: boolean; data?: USER[]; error?: string }>{

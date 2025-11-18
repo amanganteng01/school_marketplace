@@ -10,7 +10,7 @@ if (!baseUrl) {
 
 export async function GetCategory(): Promise<{ success: boolean; data?: CATEGORY[]; error?: string }>{
     try {
-        const response = await fetch(`${baseUrl}/api/category`, {
+        const response = await fetch(`${baseUrl}/api/categories`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -41,7 +41,7 @@ export async function GetCategory(): Promise<{ success: boolean; data?: CATEGORY
 
 export async function CategoryDetail(id: string): Promise<{ success: boolean; data?: CATEGORY; error?: string }> {
     try {
-        const response = await fetch(`${baseUrl}/api/category/${id}`, {
+        const response = await fetch(`${baseUrl}/api/categories/${id}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -74,7 +74,7 @@ export async function CreateCategory(
     categoryData: { category_name: string; }
 ): Promise<{ success: boolean, data?: CATEGORY, error?: string }> {
     try {
-        const response = await fetch(`${baseUrl}/api/category`, {
+        const response = await fetch(`${baseUrl}/api/categories`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -109,7 +109,7 @@ export async function UpdateCategory(
     categoryData: { category_name: string }
 ): Promise<{ success: boolean; data?: CATEGORY; error?: string }> {
     try {
-        const response = await fetch(`${baseUrl}/api/category/${id}`, {
+        const response = await fetch(`${baseUrl}/api/categories/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -153,7 +153,7 @@ export async function UpdateCategory(
 
 export async function DeleteCategory( id: number ): Promise<{ success: boolean; error?: string }> {
     try {
-        const response = await fetch(`${baseUrl}/api/category/${id}`, {
+        const response = await fetch(`${baseUrl}/api/categories/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
